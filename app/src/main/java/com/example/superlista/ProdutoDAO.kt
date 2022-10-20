@@ -27,7 +27,7 @@ class ProdutoDAO {
     fun get(): ArrayList<Produto>{
         val lista = arrayListOf<Produto>()
         val colunas = arrayOf("id", "nome", "quantidade")
-        val c = this.banco.readableDatabase.query("duelo", colunas, null, null, null, null, null)
+        val c = this.banco.readableDatabase.query("produtos", colunas, null, null, null, null, null)
         c.moveToFirst()
         for (i in 1 .. c.count){
             val id = c.getInt(0)
